@@ -17,12 +17,14 @@ const Contact = () => {
   const [email,setEmail] = useState();
   const [subject,setSubject] = useState();
   const [message, setMessage] = useState();
+  const [msg,setMsg] = useState('');
 
   const submitHandler1 = (e) => {
     e.preventDefault();
       axios.post('http://localhost:5000/contact',{name,email,subject,message})
       .then(result=>{console.log(result)
-      })
+        
+      }).then(result=>{console.log(result)})
       .catch(error=>console.log(error))
   }
 
@@ -35,6 +37,7 @@ const Contact = () => {
           <Row>
             <Col lg="6" md="6" sm="12" className="m-auto text-center">
               <form className="form mb-5" onSubmit={submitHandler1}>
+              <p class="mb-3 mt-2" style={{color:"green",marginLeft:"57px"}}><b>{msg}</b></p>
                 <div className="form__group  ">
                   <h3 className="mb-3  text-success">Get in touch</h3>
                   <p className="mb-5 text-danger">
@@ -74,6 +77,7 @@ const Contact = () => {
                 <button type="submit" className="addTOCart__btn">
                   Send
                 </button>
+                
                 <p className="mt-3">
                   <Link to="/">Go Back</Link>
                 </p>
