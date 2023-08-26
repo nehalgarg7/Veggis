@@ -44,14 +44,14 @@ app.post('/contact', (req, res) => {
         service: 'gmail',
         auth: {
             // Some changes in user google needed. {Refer to notion-Article}
-            user: 'nehalgarg37@gmail.com', 
-            pass: 'arfpbvkmcxwenwwg'
+            user: '********@gmail.com', // Paste your google account mail here
+            pass: '' //paste the password here only
         }
     });
 
     var mailOptions = {
-        from: 'nehalgarg37@gmail.com', // same as of auth-user
-        to: 'aap14932@gmail.com', // to whom you want to send email
+        from: '********@gmail.com', // same as of auth-user
+        to: 'Veggis********@gmail.com', // to whom you want to send email
         subject: req.body.subject,
         text: req.body.message,
         html: `
